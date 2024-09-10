@@ -1,0 +1,93 @@
+INSERT INTO artists VALUES(0, 'Автор неизвестен', 'Неизвестен');
+INSERT INTO artists(id, name) VALUES(1, 'Пётр Чайковский');
+INSERT INTO artists(id, name) VALUES(2, 'Симфонический оркестр им. Иванова');
+INSERT INTO artists(id, name) VALUES(3, 'The Beatles');
+INSERT INTO artists(id, name) VALUES(4, 'Queen');
+INSERT INTO artists(id, name) VALUES(5, 'Linkin Park');
+INSERT INTO artists(id, name) VALUES(6, 'Король и Шут');
+INSERT INTO artists VALUES(7, 'Вован Иванович Рэпчик', 'ВОВАН');
+
+INSERT INTO genres VALUES(0, 'Другое');
+INSERT INTO genres VALUES(1, 'Классическая музыка');
+INSERT INTO genres VALUES(2, 'Рок');
+INSERT INTO genres VALUES(3, 'Поп');
+INSERT INTO genres VALUES(4, 'Альтернативный рок');
+INSERT INTO genres VALUES(5, 'Панк-рок');
+INSERT INTO genres VALUES(6, 'Рэп');
+INSERT INTO genres VALUES(7, 'Авторская песня');
+INSERT INTO genres VALUES(8, 'Народная песня');
+
+INSERT INTO albums VALUES(0, 'Без названия', '2000-01-01');
+INSERT INTO albums VALUES(1, $$Балет "Щелкунчик"$$, '2015-05-25');
+INSERT INTO albums VALUES(2, 'Abbey Road', '1969-09-26');
+INSERT INTO albums VALUES(3, 'Let It Be', '1970-05-08');
+INSERT INTO albums VALUES(4, 'Queen', '1973-07-13');
+INSERT INTO albums VALUES(5, 'Queen II', '1974-03-08');
+INSERT INTO albums VALUES(6, 'Hybrid Theory', '2000-10-24');
+INSERT INTO albums VALUES(7, 'Meteora', '2003-03-25');
+INSERT INTO albums VALUES(8, 'Камнем по голове', '1996-10-03');
+INSERT INTO albums VALUES(9, 'TODD', '2011-12-08');
+INSERT INTO albums VALUES(10, 'РЭПЧИК в исполнении ВОВАНА', '2019-01-01');
+
+INSERT INTO tracks VALUES(0, 'звук падения железной трубы ПРИКОЛ', '00:00:03', 0);
+INSERT INTO tracks VALUES(1, $$Балет "Щелкунчик", действие первое$$, '00:44:59', 1);
+INSERT INTO tracks VALUES(2, $$Балет "Щелкунчик", действие второе$$, '00:46:00', 1);
+INSERT INTO tracks VALUES(3, 'Come Together', '00:04:19', 2);
+INSERT INTO tracks VALUES(4, 'Let It Be', '00:04:03', 3);
+INSERT INTO tracks VALUES(5, 'Get Back', '00:03:07', 3);
+INSERT INTO tracks VALUES(6, 'My Fairy King', '00:03:45', 4);
+INSERT INTO tracks VALUES(7, 'Some Day One Day', '00:04:21', 5);
+INSERT INTO tracks VALUES(8, 'Nevermore', '00:01:17', 5);
+INSERT INTO tracks VALUES(9, 'Papercut', '00:03:05', 6);
+INSERT INTO tracks VALUES(10, 'Faint', '00:02:42', 7);
+INSERT INTO tracks VALUES(11, 'Numb', '00:03:08', 7);
+INSERT INTO tracks VALUES(12, 'Смельчак и ветер', '00:03:03', 8);
+INSERT INTO tracks VALUES(13, 'TODD акт 1', '00:39:10', 9);
+INSERT INTO tracks VALUES(14, 'TODD акт 2', '00:29:55', 9);
+INSERT INTO tracks VALUES(15, 'ВОВАН читает рэп два дня подряд ЖЕСТЬ', '48:00:00', 10);
+INSERT INTO tracks VALUES(16, 'Мой первый трек!', '00:05:00', 0);
+
+INSERT INTO collections VALUES(0, 'Классическая музыка', '2022-01-01');
+INSERT INTO collections VALUES(1, 'Поп-музыка на все времена', '2020-01-01');
+INSERT INTO collections VALUES(2, 'Лучший рок!', '2015-01-01');
+INSERT INTO collections VALUES(3, 'КАЧАЕТ и точка', '2018-01-01');
+
+INSERT INTO albums_artists VALUES(0, 0);
+INSERT INTO albums_artists VALUES(1, 1);
+INSERT INTO albums_artists VALUES(2, 1);
+INSERT INTO albums_artists VALUES(3, 2);
+INSERT INTO albums_artists VALUES(3, 3);
+INSERT INTO albums_artists VALUES(4, 4);
+INSERT INTO albums_artists VALUES(4, 5);
+INSERT INTO albums_artists VALUES(5, 6);
+INSERT INTO albums_artists VALUES(5, 7);
+INSERT INTO albums_artists VALUES(6, 8);
+INSERT INTO albums_artists VALUES(6, 9);
+INSERT INTO albums_artists VALUES(7, 10);
+
+INSERT INTO collection_tracks VALUES(0, 1);
+INSERT INTO collection_tracks VALUES(0, 2);
+INSERT INTO collection_tracks VALUES(1, 4);
+INSERT INTO collection_tracks VALUES(1, 6);
+INSERT INTO collection_tracks VALUES(1, 7);
+INSERT INTO collection_tracks VALUES(2, 11);
+INSERT INTO collection_tracks VALUES(2, 12);
+INSERT INTO collection_tracks VALUES(2, 13);
+INSERT INTO collection_tracks VALUES(3, 11);
+INSERT INTO collection_tracks VALUES(3, 15);
+INSERT INTO collection_tracks VALUES(3, 4);
+
+INSERT INTO genres_artists VALUES(0, 0);
+INSERT INTO genres_artists VALUES(0, 6);
+INSERT INTO genres_artists VALUES(1, 1);
+INSERT INTO genres_artists VALUES(2, 1);
+INSERT INTO genres_artists VALUES(3, 3);
+INSERT INTO genres_artists VALUES(4, 3);
+INSERT INTO genres_artists VALUES(3, 2);
+INSERT INTO genres_artists VALUES(4, 2);
+INSERT INTO genres_artists VALUES(5, 2);
+INSERT INTO genres_artists VALUES(5, 4);
+INSERT INTO genres_artists VALUES(6, 2);
+INSERT INTO genres_artists VALUES(6, 5);
+INSERT INTO genres_artists VALUES(7, 6);
+INSERT INTO genres_artists VALUES(7, 7)
