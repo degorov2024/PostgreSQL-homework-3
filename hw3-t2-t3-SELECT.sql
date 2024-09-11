@@ -24,18 +24,29 @@ WHERE name LIKE '%Мой%'
 -- ЗАДАНИЕ 3
    
 -- Количество исполнителей в каждом жанре.
-SELECT COUNT(DISTINCT artist_id), genre_id, name FROM genres_artists ga
-JOIN genres g ON ga.genre_id = g.id
-GROUP BY genre_id, name
--- НЕ ПОКАЗЫВАЕТСЯ ЖАНР БЕЗ ЕДИНОГО ИСПОЛНИТЕЛЯ!-----------------------------------------------
+SELECT COUNT(DISTINCT artist_id), g.id, name FROM genres_artists ga
+RIGHT JOIN genres g ON ga.genre_id = g.id
+GROUP BY g.id, name
 
 -- Количество треков, вошедших в альбомы 2019–2020 годов.
+-- (по каждому из таких альбомов)
+SELECT COUNT(DISTINCT t.id) AS amount, a.name FROM tracks AS t
+JOIN albums AS a ON t.album = a.id
+WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31'
+GROUP BY a.name
+/* 
+-- (если подразумевается поиск общего количества таких треков, т.е. на выходе просто "одно число") 
 SELECT COUNT(DISTINCT t.id) AS released_between_2019_and_2020 FROM tracks AS t
 JOIN albums a ON t.album = a.id
-WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31'
+WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31' 
+*/
 
 -- Средняя продолжительность треков по каждому альбому.
---SELECT AVG( ... ) AS average_duration FROM tracks AS t
---JOIN albums a ON t.album = a.id
---(...)
---ORDER BY average_duration
+SELECT AVG(t.duration) AS average_duration, a.name, a.id
+FROM albums a
+JOIN tracks t ON a.id = t.album 
+GROUP BY a.id, a.name
+ORDER BY a.name
+
+-- Все исполнители, которые не выпустили альбомы в 2020 году.
+
