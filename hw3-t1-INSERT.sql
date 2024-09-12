@@ -28,6 +28,7 @@ INSERT INTO albums VALUES(7, 'Meteora', '2003-03-25');
 INSERT INTO albums VALUES(8, 'Камнем по голове', '1996-10-03');
 INSERT INTO albums VALUES(9, 'TODD', '2011-12-08');
 INSERT INTO albums VALUES(10, 'РЭПЧИК в исполнении ВОВАНА', '2019-01-01');
+INSERT INTO albums VALUES(11, 'ВОВАН возвращается', '2020-01-10');
 
 INSERT INTO tracks VALUES(0, 'звук падения железной трубы ПРИКОЛ', '00:00:03', 0);
 INSERT INTO tracks VALUES(1, $$Балет "Щелкунчик", действие первое$$, '00:44:59', 1);
@@ -46,6 +47,7 @@ INSERT INTO tracks VALUES(13, 'TODD акт 1', '00:39:10', 9);
 INSERT INTO tracks VALUES(14, 'TODD акт 2', '00:29:55', 9);
 INSERT INTO tracks VALUES(15, 'ВОВАН читает рэп два дня подряд ЖЕСТЬ', '48:00:00', 10);
 INSERT INTO tracks VALUES(16, 'Мой первый трек!', '00:05:00', 0);
+INSERT INTO tracks VALUES(17, 'Слон подружился с питоном', '00:03:00', 11);
 
 INSERT INTO collections VALUES(0, 'Классическая музыка', '2022-01-01');
 INSERT INTO collections VALUES(1, 'Поп-музыка на все времена', '2020-01-01');
@@ -64,6 +66,7 @@ INSERT INTO albums_artists VALUES(5, 7);
 INSERT INTO albums_artists VALUES(6, 8);
 INSERT INTO albums_artists VALUES(6, 9);
 INSERT INTO albums_artists VALUES(7, 10);
+INSERT INTO albums_artists VALUES(7, 11);
 
 INSERT INTO collection_tracks VALUES(0, 1);
 INSERT INTO collection_tracks VALUES(0, 2);
