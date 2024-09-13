@@ -16,13 +16,13 @@ SELECT name FROM artists
 WHERE name NOT LIKE '% %';
 -- Название треков, которые содержат слово «мой» или «my».
 SELECT name FROM tracks
-WHERE name ILIKE '%МОЙ %' 
-	OR name ILIKE '% МОЙ%'
-	OR name ILIKE '%МОЙ%'
+WHERE name ILIKE 'МОЙ %' 
+	OR name ILIKE '% МОЙ'
+	OR name ILIKE '% МОЙ %'
 	OR name ILIKE 'МОЙ'
-	OR name ILIKE '%my %'
-	OR name ILIKE '% my%'
-	OR name ILIKE '%my%'
+	OR name ILIKE 'my %'
+	OR name ILIKE '% my'
+	OR name ILIKE '% my %'
 	OR name ILIKE 'my';
 
 -- ЗАДАНИЕ 3
