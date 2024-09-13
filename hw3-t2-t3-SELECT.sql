@@ -16,10 +16,14 @@ SELECT name FROM artists
 WHERE name NOT LIKE '% %';
 -- Название треков, которые содержат слово «мой» или «my».
 SELECT name FROM tracks
-WHERE name LIKE '%Мой%' 
-	OR name LIKE '%мой%' 
-	OR name LIKE '%My%' 
-	OR name LIKE '%my%';
+WHERE name ILIKE '%МОЙ %' 
+	OR name ILIKE '% МОЙ%'
+	OR name ILIKE '%МОЙ%'
+	OR name ILIKE 'МОЙ'
+	OR name ILIKE '%my %'
+	OR name ILIKE '% my%'
+	OR name ILIKE '%my%'
+	OR name ILIKE 'my';
 
 -- ЗАДАНИЕ 3
    
@@ -30,17 +34,9 @@ RIGHT JOIN genres g ON ga.genre_id = g.id
 GROUP BY g.id, name;
 
 -- Количество треков, вошедших в альбомы 2019–2020 годов.
--- (по каждому из таких альбомов)
-SELECT COUNT(DISTINCT t.id) AS amount, a.name, a.year FROM tracks AS t
-JOIN albums AS a ON t.album = a.id
-WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31'
-GROUP BY a.name, a.year;
-/* 
--- (если подразумевается поиск общего количества таких треков, т.е. на выходе просто "одно число") 
 SELECT COUNT(DISTINCT t.id) AS released_between_2019_and_2020 FROM tracks AS t
 JOIN albums a ON t.album = a.id
-WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31' 
-*/
+WHERE a.year BETWEEN '2019-01-01' AND '2020-12-31';
 
 -- Средняя продолжительность треков по каждому альбому.
 SELECT AVG(t.duration) AS average_duration, a.name, a.id
@@ -50,10 +46,14 @@ GROUP BY a.id, a.name
 ORDER BY a.name;
 
 -- Все исполнители, которые НЕ выпустили альбомы в 2020 году.
-SELECT ar.name, al.name from artists AS ar
-JOIN albums_artists AS al_ar ON ar.id = al_ar.artist_id
-JOIN albums AS al ON al_ar.album_id = al.id
-WHERE al.year NOT BETWEEN '2020-01-01' AND '2020-12-31';
+SELECT ar.name
+FROM artists AS ar
+WHERE ar.name NOT IN (
+	SELECT ar.name from artists
+	JOIN albums_artists AS al_ar ON ar.id = al_ar.artist_id
+	JOIN albums AS al ON al_ar.album_id = al.id
+	WHERE al.year BETWEEN '2020-01-01' AND '2020-12-31'
+);
 
 --Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 --(в данном примере - Linkin Park)

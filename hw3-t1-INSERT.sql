@@ -48,6 +48,12 @@ INSERT INTO tracks VALUES(14, 'TODD акт 2', '00:29:55', 9);
 INSERT INTO tracks VALUES(15, 'ВОВАН читает рэп два дня подряд ЖЕСТЬ', '48:00:00', 10);
 INSERT INTO tracks VALUES(16, 'Мой первый трек!', '00:05:00', 0);
 INSERT INTO tracks VALUES(17, 'Слон подружился с питоном', '00:03:00', 11);
+INSERT INTO tracks VALUES(18, 'ето мой первый трек', '00:01:00', 0);
+INSERT INTO tracks VALUES(19, 'этот трек не мой', '00:02:00', 0);
+INSERT INTO tracks VALUES(20, $$IT'S MY LIFE$$, '00:01:00', 0);
+INSERT INTO tracks VALUES(21, 'some music OH MY', '00:01:00', 0);
+INSERT INTO tracks VALUES(22, 'МоЙ', '00:01:00', 0);
+INSERT INTO tracks VALUES(23, 'mY', '00:01:00', 0);
 
 INSERT INTO collections VALUES(0, 'Классическая музыка', '2022-01-01');
 INSERT INTO collections VALUES(1, 'Поп-музыка на все времена', '2020-01-01');
